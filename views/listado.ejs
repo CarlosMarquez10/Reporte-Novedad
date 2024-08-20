@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>Listado de Novedades</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-self: start;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        box-sizing: border-box;
+      }
+
+      .card img {
+        width: 100%; /* Ancho completo del contenedor de la tarjeta */
+        height: 250px; /* Altura fija */
+        object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
+        border-radius: 8px;
+      }
+
+      .card h2 {
+        font-size: 1.5em;
+        margin: 10px 0;
+      }
+
+      .card p {
+        font-size: 1em;
+        margin: 5px 0;
+      }
+
+      .card-buttons {
+        display: flex;
+        gap: 10px; /* Espacio entre los botones */
+        margin-top: 10px;
+      }
+
+      .card-buttons form {
+        flex-grow: 1; /* Hace que los botones se ajusten uniformemente */
+      }
+
+      .card-buttons button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .card-buttons button.ver-button {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .card-buttons button.ver-button:hover {
+        background-color: #0056b3;
+      }
+
+      .card-buttons button.delete-button {
+        background-color: #dc3545;
+        color: white;
+      }
+
+      .card-buttons button.delete-button:hover {
+        background-color: #c82333;
+      }
+
+      /* Estilos específicos para la barra de navegación */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #343a40;
+        padding: 10px 20px;
+        color: white;
+      }
+
+      .navbar img {
+        height: 40px;
+      }
+
+      .navbar .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+
+      .navbar .menu a:hover {
+        background-color: #495057;
+        border-radius: 5px;
+      }
+
+      .textAreaObs {
+        width: 100%;
+        height: 80px;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+        overflow: hidden; /* Oculta cualquier contenido que exceda la altura */
+        text-overflow: ellipsis; /* Añade "..." al final si el texto es demasiado largo */
+        white-space: nowrap; /* Mantiene el texto en una sola línea si es necesario */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+        -webkit-box-orient: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="/css/inmel.ico" alt="Logo" />
+      <div class="menu">
+        <a href="/">Inicio</a>
+        <a href="/listado">Listado</a>
+        <a href="/informacion">Información</a>
+      </div>
+    </div>
+
+    <main>
+      <h1>Listado de Novedades</h1>
+      <div class="container">
+        <% novedades.forEach(novedad => { %>
+        <div class="card">
+          <img src="/<%= novedad.fotoPath %>" alt="Foto de la novedad" />
+          <h2><%= novedad.nombre %></h2>
+          <p><strong>Terminal:</strong> <%= novedad.terminal %></p>
+          <p><strong>Regional:</strong> <%= novedad.regional %></p>
+          <textarea class="textAreaObs" readonly><%= novedad.observacion %></textarea>
+          <div class="card-buttons">
+            <form action="/ver/<%= novedad.id %>" method="GET">
+              <button type="submit" class="ver-button">Ver</button>
+            </form>
+            <form
+              action="/delete/<%= novedad.id %>"
+              method="POST"
+              class="delete-form"
+            >
+              <button type="submit" class="delete-button">Borrar</button>
+            </form>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </main>
+  </body>
+</html>

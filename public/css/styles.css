@@ -1,61 +1,163 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form button {
+  background-color: transparent; /* Sin color de fondo */
+  border: none; /* Sin bordes */
+  color: red; /* El color del texto puede ser rojo para mantener la advertencia */
+  cursor: pointer; /* Cursor en forma de mano para indicar que es un botón */
+  font-size: 16px; /* Tamaño de fuente */
+  padding: 5px;
+}
+
+form button:hover {
+  color: white;
+  background-color: rgb(1, 180, 1);
+}
+
+textarea {
+  width: 100%; /* Ancho completo del contenedor */
+  height: 100px; /* Altura fija */
+  resize: none; /* Desactivar redimensionamiento */
+  box-sizing: border-box; /* Para incluir el padding y borde en el tamaño total */
+  padding: 10px; /* Espacio interior */
+  font-size: 16px; /* Tamaño de fuente */
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Estilos específicos para la barra de navegación */
+.navbar {
+  width: 97.8%;
+  padding: 0px 40px 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  padding: 10px 20px;
+  color: white;
+}
+.navbar img {
+  height: 40px;
+}
+.navbar .menu {
+  display: flex;
+  gap: 20px;
+}
+.navbar .menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+.navbar .menu a:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.Registro-form__main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: green; */
+
+}
+
+.from-Registro__Novedad{
+  width: 100%;
+  height: 100%;
+  /* margin-top: 2rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnfrom-registro{
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: green;
+  color: white;
+}
+
+/* Estilos para teléfonos (ancho máximo de 768px) */
+@media only screen and (max-width: 768px) {
+
   form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
   }
-  
-  form div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  select,
-  textarea,
-  input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    border: none;
-    border-radius: 4px;
+
+  .navbar {
+    width: 97%;
+    padding: 0px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    padding: 10px 20px;
     color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    z-index: 999;
+  }
+
+  .btnfrom-registro{
+    width: 300px;
+    border-radius: 0.5rem;
+    background-color: green;
+    color: white;
   }
   
-  button:hover {
-    background-color: #218838;
-  }
-  
+}

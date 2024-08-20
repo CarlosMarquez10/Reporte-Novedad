@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <main class="Registro-form__main">
+      <div class="navbar">
+        <img src="/css/inmel.ico" alt="Logo" />
+        <div class="menu">
+          <a href="/login">Ingresar</a>
+          <a href="/">Inicio</a>
+          <a href="/informacion">Información</a>
+        </div>
+      </div>
+     <section class="from-Registro__Novedad">
+      <h1>Registro de Novedad</h1>
+      <form action="/submit" method="POST" enctype="multipart/form-data">
+        <div>
+          <label>Nombre:</label>
+          <input type="text" name="nombre" required />
+        </div>
+        <div>
+          <label>Nombre de la Terminal:</label>
+          <input type="text" name="terminal" required />
+        </div>
+        <div>
+          <label>Regional:</label>
+          <select name="regional" required>
+            <option value="">Selecciona una opción</option>
+            <!-- Esto asegura que una opción válida sea seleccionada -->
+            <option value="CUCUTA">CUCUTA</option>
+            <option value="PAMPLONA">PAMPLONA</option>
+            <option value="OCAÑA">OCAÑA</option>
+            <option value="TIBU">TIBU</option>
+            <option value="TTIBU-PUEBLOS">TTIBU-PUEBLOS</option>
+            <option value="AGUACHICA">AGUACHICA</option>
+          </select>
+        </div>
+        <div>
+          <label>Observación:</label>
+          <textarea name="observacion" maxlength="150" required></textarea>
+        </div>
+        <div>
+          <label>Foto:</label>
+          <input type="file" name="foto" accept="image/*" required />
+        </div>
+        <button class="btnfrom-registro" type="submit">Guardar</button>
+      </form>
+     </section>
+
+    </main>
+  </body>
+</html>
