@@ -10,10 +10,12 @@
       rel="stylesheet"
     />
     <title>Listado de Novedades</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/filtrosMenu.css" />
+    <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/filtrosMenu.css" />
     <link rel="stylesheet" href="/css/listado.css" />
+    <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
+
   </head>
   <body>
     <!-- Incluir la barra de navegación -->
@@ -23,23 +25,16 @@
       <h1>Listado de Novedades</h1>
 
       <!-- Filtros -->
-      <form class="FiltroMenu" id="filterForm" action="/listado" method="GET">
-        <label for="fecha">Filtrar por Fecha:</label>
-        <input type="date" id="fecha" name="fecha" />
-
-        <label for="regional">Filtrar por Regional:</label>
-        <select id="regional" name="regional">
-          <option value="">Todas</option>
-          <option value="CUCUTA">CUCUTA</option>
-          <option value="PAMPLONA">PAMPLONA</option>
-          <option value="OCAÑA">OCAÑA</option>
-          <option value="TIBU">TIBU</option>
-          <option value="TTIBU-PUEBLOS">TTIBU-PUEBLOS</option>
-          <option value="AGUACHICA">AGUACHICA</option>
-        </select>
-
-        <button type="submit">Aplicar Filtros</button>
-      </form>
+      <div class="cont-from__filtros">
+        <form
+          class="FiltroMenu"
+          id="filterForm"
+          action="/informacion"
+          method="GET"
+        >
+          <%-include('components/filtroBusqueda.ejs')%>
+        </form>
+      </div>
 
       <div class="container">
         <% novedades.forEach(novedad => { %>

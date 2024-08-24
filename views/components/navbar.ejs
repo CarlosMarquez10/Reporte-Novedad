@@ -1,14 +1,14 @@
 <div class="navbar">
-  <img src="/css/inmel.ico" alt="Logo" />
+  <img src="/img/inmel.ico" alt="Logo" />
   <div class="menu">
-    <a href="/">Registro</a>
+    <a class="nav-Registro" href="/">Registro</a>
     <% if (typeof user !== 'undefined' && user) { %>
-      <a href="/listado">Pendientes</a>
-      <a href="/informacion">Atendidos</a>
-      <a href="/descargarExcel">Descargar Excel</a> <!-- Botón de descarga solo visible para usuarios autenticados -->
-      <a href="/logout">X</a>
+      <a class="nav-lisado" href="/listado">Pendientes</a>
+      <a class="nav-info" href="/informacion">Atendidos</a>
+      <a class="nav-descargarExcel" href="/descargarExcel">Descargar Excel</a> <!-- Botón de descarga solo visible para usuarios autenticados -->
+      <a class="nav-btn__cerrar" href="/logout">X</a>
     <% } else { %>
-      <a href="/login">Ingresar</a>
+      <a class="nav-login" href="/login">Ingresar</a>
     <% } %>
   </div>
 </div>

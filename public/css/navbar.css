@@ -1,5 +1,7 @@
 /* Estilos específicos para la barra de navegación */
 .navbar {
+  width: 97.8%;
+  padding: 0px 40px 0px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +26,62 @@
   padding: 5px 10px;
 }
 
-.navbar .menu a:hover {
+.nav-Registro:hover {
   background-color: #495057;
   border-radius: 5px;
+}
+
+.nav-lisado:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.nav-infov:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.nav-descargarExcel:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.nav-btn__cerrar:hover {
+  background-color: red;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.nav-info:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.nav-login:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    width: 97%;
+    padding: 0px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    padding: 10px 20px;
+    color: white;
+    z-index: 999;
+  }
+
+  .navbar img {
+    display: none;
+  }
+
+  .nav-btn__cerrar:hover {
+    background-color: red;
+    color: white;
+    border-radius: 0.2rem;
+  }
 }
