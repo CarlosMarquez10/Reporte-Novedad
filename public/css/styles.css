@@ -58,6 +58,32 @@ form button:hover {
   background-color: rgb(1, 180, 1);
 }
 
+.inputFecha {
+  width: 94.5%; /* Ancho completo del contenedor */
+  height: 16px; /* Altura fija */
+  padding: 10px; /* Espacio interior */
+  font-size: 16px; /* Tamaño de fuente */
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.Inp-Cedula {
+  width: 94.5%; /* Ancho completo del contenedor */
+  height: 16px; /* Altura fija */
+  padding: 10px; /* Espacio interior */
+  font-size: 16px; /* Tamaño de fuente */
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 textarea {
   width: 100%; /* Ancho completo del contenedor */
   height: 100px; /* Altura fija */
@@ -100,7 +126,7 @@ textarea {
   border-radius: 5px;
 }
 
-.Registro-form__main{
+.Registro-form__main {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -108,10 +134,9 @@ textarea {
   justify-content: flex-start;
   align-items: center;
   /* background-color: green; */
-
 }
 
-.from-Registro__Novedad{
+.from-Registro__Novedad {
   width: 100%;
   height: 100%;
   /* margin-top: 2rem; */
@@ -121,7 +146,7 @@ textarea {
   align-items: center;
 }
 
-.btnfrom-registro{
+.btnfrom-registro {
   width: 100%;
   height: 2.5rem;
   border-radius: 0.5rem;
@@ -131,7 +156,6 @@ textarea {
 
 /* Estilos para teléfonos (ancho máximo de 768px) */
 @media only screen and (max-width: 768px) {
-
   form {
     background-color: #fff;
     padding: 20px;
@@ -153,11 +177,10 @@ textarea {
     z-index: 999;
   }
 
-  .btnfrom-registro{
+  .btnfrom-registro {
     width: 300px;
     border-radius: 0.5rem;
     background-color: green;
     color: white;
   }
-  
 }

@@ -1,0 +1,30 @@
+/* Estilos específicos para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.navbar .menu a:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}

@@ -12,24 +12,18 @@
 
   <body>
     <main class="Registro-form__main">
-      <div class="navbar">
-        <img src="/css/inmel.ico" alt="Logo" />
-        <div class="menu">
-          <a href="/login">Ingresar</a>
-          <a href="/">Inicio</a>
-          <a href="/informacion">Información</a>
-        </div>
-      </div>
+  <!-- Incluir la barra de navegación -->
+  <%- include('components/navbar', { user: user }) %>
      <section class="from-Registro__Novedad">
       <h1>Registro de Novedad</h1>
       <form action="/submit" method="POST" enctype="multipart/form-data">
         <div>
-          <label>Nombre:</label>
-          <input type="text" name="nombre" required />
+          <label>Cedula :</label>
+          <input class="Inp-Cedula" type="number" name="nombre" required />
         </div>
         <div>
-          <label>Nombre de la Terminal:</label>
-          <input type="text" name="terminal" required />
+          <label>Fecha de la Novedad :</label>
+          <input class="inputFecha" type="date" name="terminal" required />
         </div>
         <div>
           <label>Regional:</label>

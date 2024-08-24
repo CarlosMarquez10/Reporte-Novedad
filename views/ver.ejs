@@ -15,21 +15,22 @@
 
   <style>
     .Card-Ver {
-      width: 800px;
-      height: 600px;
+      width: 70rem;
+      height: 500px;
       margin-top: 3rem;
+      margin-bottom: 3rem;
       display: grid;
       place-content: center;
       /* background-color: green; */
     }
 
-    .Card-Ver img {
+    /* .Card-Ver img {
       width: 100%;
       margin-top: 0px;
       margin-bottom: 0.8rem;
       height: auto;
       object-fit: cover;
-    }
+    } */
 
     .container-ver {
       margin-top: 5rem;
@@ -43,6 +44,33 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+
+    .Card-Ver {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Card-Ver img {
+      width: 25rem;
+      height: 25rem;
+      margin: 1rem;
+      border-radius: 0.7rem;
+    }
+
+    .cont-datos--ver {
+      width: 25rem;
+      height: 8rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 1rem;
+    }
+
     .VerInfo {
       width: 100%;
       /* background: pink; */
@@ -55,9 +83,16 @@
       margin: 5px;
       text-align: left;
     }
+    .container-ver h2 {
+      width: 90%;
+      padding: 1rem;
+      background-color: #202020;
+      color: white;
+      border-radius: 0.7rem;
+    }
     textarea {
       width: 100%; /* Ancho completo del contenedor */
-      height: 100px; /* Altura fija */
+      height: 200px; /* Altura fija */
       resize: none; /* Desactivar redimensionamiento */
       box-sizing: border-box; /* Para incluir el padding y borde en el tamaño total */
       padding: 10px; /* Espacio interior */
@@ -75,6 +110,7 @@
         width: 370px;
         height: 500px;
         margin-top: 3rem;
+        margin-bottom: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -97,39 +133,46 @@
       }
 
       textarea {
-        width: 95%; /* Ancho completo del contenedor */
+        width: 100%; /* Ancho completo del contenedor */
         height: 150px; /* Altura fija */
+        margin-top: 1rem;
         resize: none; /* Desactivar redimensionamiento */
         box-sizing: border-box; /* Para incluir el padding y borde en el tamaño total */
         padding: 10px; /* Espacio interior */
         font-size: 16px; /* Tamaño de fuente */
         border-radius: 1rem;
       }
+
+      .cont-datos--ver {
+        width: 18rem;
+        height: 15rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        border: none;
+        border-radius: none;
+      }
     }
   </style>
   <body>
-    <div class="navbar">
-      <img src="/css/inmel.ico" alt="Logo" />
-      <div class="menu">
-        <a href="/">Inicio</a>
-        <a href="/listado">Listado</a>
-        <a href="/informacion">Información</a>
-      </div>
-    </div>
+    <%-include('components/navbar.ejs', {user: user})%>
 
     <main class="VerInfo">
       <div class="container-ver">
         <h2><%= novedad.nombre %></h2>
         <div class="Card-Ver">
           <img src="/<%= novedad.fotoPath %>" alt="Foto de la novedad" />
-
-          <p class="datosVer">
-            <strong>Terminal:</strong> <%= novedad.terminal %>
-          </p>
-          <p class="datosVer">
-            <strong>Regional:</strong> <%= novedad.regional %>
-          </p>
-          <textarea><%= novedad.observacion %></textarea>
+          <div class="cont-datos--ver">
+            <p class="datosVer">
+              <strong>Terminal:</strong> <%= novedad.terminal %>
+            </p>
+            <p class="datosVer">
+              <strong>Regional:</strong> <%= novedad.regional %>
+            </p>
+            <textarea><%= novedad.observacion %></textarea>
+          </div>
         </div>
       </div>
     </main>

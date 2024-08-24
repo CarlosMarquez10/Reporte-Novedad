@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Éxito</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <style>
-    .message-card {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    .message-card h2 {
-      margin-bottom: 20px;
-    }
-    .message-card a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .message-card a:hover {
-      background-color: #218838;
-    }
-  </style>
-</head>
-<body>
-  <div class="message-card">
-    <h2>¡Datos enviados con éxito!</h2>
-    <a href="/">Realizar otro registro</a>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Éxito</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      .message-card {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 400px;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .message-card h2 {
+        margin-bottom: 20px;
+      }
+      .message-card a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .message-card a:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+  <!-- Incluir la barra de navegación -->
+  <%- include('components/navbar', { user: user }) %>
+    <div class="message-card">
+      <h2>¡Datos enviados con éxito!</h2>
+      <a href="/">Realizar otro registro</a>
+    </div>
+  </body>
 </html>

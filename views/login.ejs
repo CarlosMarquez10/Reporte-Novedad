@@ -1,129 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  <title>Iniciar Sesión</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-      margin: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
 
-    .login-container {
-      width: 400px;
-      /* background-color: transparent; */
-      padding: 20px;
-      border-radius: 8px;
-      /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-      text-align: center;
-      display: grid;
-      place-content: center;
-    }
+      .login-container {
+        width: 400px;
+        /* background-color: transparent; */
+        padding: 20px;
+        border-radius: 8px;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+        text-align: center;
+        display: grid;
+        place-content: center;
+      }
 
-    .login-container img {
-      width: 100px;
-      margin-bottom: 20px;
-      /* background-color: green; */
-    }
+      .login-container img {
+        width: 100px;
+        margin-bottom: 20px;
+        /* background-color: green; */
+      }
 
-    .login-container form {
-      width: 300px;
-      display: flex;
-      flex-direction: column;
-    }
+      .login-container form {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
 
-    .login-container input[type="text"],
-    .login-container input[type="password"] {
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
+      .login-container input[type="text"],
+      .login-container input[type="password"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
 
-    .login-container button {
-      padding: 10px;
-      background-color: #b80d38;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+      .login-container button {
+        padding: 10px;
+        background-color: #b80d38;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
 
-    .login-container button:hover {
-      background-color: #d8083c;
-    }
+      .login-container button:hover {
+        background-color: #d8083c;
+      }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #343a40;
-      padding: 10px 20px;
-      color: white;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #343a40;
+        padding: 10px 20px;
+        color: white;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
 
-    .navbar img {
-      height: 40px;
-    }
+      .navbar img {
+        height: 40px;
+      }
 
-    .navbar .menu {
-      display: flex;
-      gap: 20px;
-    }
+      .navbar .menu {
+        display: flex;
+        gap: 20px;
+      }
 
-    .navbar .menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 5px 10px;
-    }
+      .navbar .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
 
-    .navbar .menu a:hover {
-      background-color: #495057;
-      border-radius: 5px;
-    }
-    .inpName{
-      text-transform: uppercase;
-    }
-  </style>
-</head>
-<body>
+      .navbar .menu a:hover {
+        background-color: #495057;
+        border-radius: 5px;
+      }
+      .inpName {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+  <!-- Incluir la barra de navegación -->
+  <%- include('components/navbar', { user: user }) %>
 
-  <div class="navbar">
-    <img src="/css/inmel.ico" alt="Logo" />
-    <div class="menu">
-      <a href="/">Inicio</a>
-      <a href="/listado">Listado</a>
-      <a href="/informacion">Información</a>
+    <div class="login-container">
+      <div class="logo-title">
+        <img src="/css/inmel.ico" alt="Logo" />
+        <h1>Iniciar Sesión</h1>
+      </div>
+
+      <form action="/login" method="POST">
+        <input
+          class="inpName"
+          type="text"
+          name="username"
+          placeholder="Usuario"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          required
+        />
+        <button type="submit">Ingresar</button>
+      </form>
     </div>
-  </div>
-
-  <div class="login-container">
-    <div class="logo-title">
-      <img src="/css/inmel.ico" alt="Logo" />
-      <h1>Iniciar Sesión</h1>
-    </div>
-    
-    <form action="/login" method="POST">
-      <input class="inpName" type="text" name="username" placeholder="Usuario" required>
-      <input type="password" name="password" placeholder="Contraseña" required>
-      <button type="submit">Ingresar</button>
-    </form>
-  </div>
-
-</body>
+  </body>
 </html>
