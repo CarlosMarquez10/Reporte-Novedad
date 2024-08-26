@@ -3,13 +3,18 @@ import { conexion } from "../model/Db.js";
 const connection = conexion();
 
 export const Revisados = (req, res) => {
-  const { fecha, regional } = req.query;
+  const { fechaDesde, fechaHasta, regional  } = req.query;
   let query = "SELECT * FROM novedades WHERE Estado = 'Revisado'";
   const queryParams = [];
 
-  if (fecha) {
-    query += " AND DATE(terminal) = ?";
-    queryParams.push(fecha);
+  if (fechaDesde) {
+    query += " AND DATE(terminal) >= ?";
+    queryParams.push(fechaDesde);
+  }
+
+  if (fechaHasta) {
+    query += " AND DATE(terminal) <= ?";
+    queryParams.push(fechaHasta);
   }
 
   if (regional) {
